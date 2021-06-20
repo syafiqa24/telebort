@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+  <title>Typing for Kids</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<audio id="myAudio">
+	<source src="kids.mp3" type="audio/mp3">
+	Your browser does not support the audio element.
+	</audio>
+
+  <div class="container">
+    <div class="heading">Type and Learn</div>
+    <div class="header">
+      <div class="errors">
+        <div class="header_text">Errors</div>
+        <div class="curr_errors">0</div>
+      </div>
+      <div class="timer">
+        <div class="header_text">Time</div>
+        <div class="curr_time">20s</div>
+      </div>
+      <div class="score">
+        <div class="header_text">Score</div>
+        <div class="curr_score">0%</div>
+      </div>
+    </div>
+
+    <div class="quote">Click on the text area below to start.</div>
+    <textarea class="input_area" placeholder="Type here" oninput="processCurrentText()"
+      onfocus="startGame()"></textarea>
+    <button class="restart_btn" onclick="resetValues()">Restart</button>
+  </div>
+  <script src="game.js">
+	music = document.getElementById("myAudio"); 
+	function playAudio() { 
+	music.play(); } 
+	
+	function stopAudio() { 
+    music.stop(); } 
+	
+	function myFunction() {
+	setTimeout(function(){ alert("Game over!"); }, 1000);}
+  </script>
+</body>
+</html>
